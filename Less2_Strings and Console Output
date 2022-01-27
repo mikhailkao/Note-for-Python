@@ -1,0 +1,45 @@
+Strings - 
+	常用的string類型有 letters字母 / numbers數字 / symbols符號
+	無論為何，都要用引號包起來
+
+Escaping characters 跳脫字元 - 
+	使用反斜線(\)來表示跳脫！
+	在以下的字串中，程式會認為在第二個引號就結束第一組字串
+	'There's a snake in my boot!'
+	這時候只要加入跳脫字元即可
+	'There\'s a snake in my boot!'
+
+Index [] - 
+	使用中括號表示index
+	Index的位置要從0開始算
+	表示法：T = "PYTHON"[2]
+	+---+---+---+---+---+---+
+	| P | Y | T | H | O | N |
+	+---+---+---+---+---+---+
+	  0   1   2   3   4   5
+
+String methods - 
+	len() - 計算字元數。使用方法：len(a) -> 只能用在string上面
+	lower() - 轉換為小寫。使用方法：a.lower() -
+	upper() - 轉換為大寫。使用方法：a.upper()
+	str() - 轉換為str。使用方法：str(a) -> 只能用在物件上面
+	注意：上述中有使用【.】的，僅能使用在string上面！
+
+print - 用來輸出內容
+	print str
+	print var
+	String Concatenation
+
+String Concatenation - 連接字串
+	連結多組字串，中間用【+】連接即可，並且包含括弧中的空格
+	如果要連結的包含【非字串】物件，就可以透過 str() 來進行轉換，才能正確print出來
+	ex. print "I have " + str(1) + "dream."
+	注意：str(1)就不用再用括弧包起來，不然會變成字串
+
+String Formatting - 字串格式化 - %
+	【%】用來連結字串與變數，【%】用來將連接在後的字串變數把【%s】取代掉，後段加上% ()
+	如果要取代的是整數int，可以使用【%02d】，2用來表示要填充的字元數，不足的部分使用0來填充，d代表要填充的是整數（不分正負數）。 -> 0似乎是固定的寫法，不能找到其他可填充的字元
+	需要留意的是，【%s】需要和後面的 % ()內含的變數數量一致
+	
+
+
