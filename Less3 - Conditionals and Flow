@@ -1,0 +1,31 @@
+Comparators - 
+	用來比較的比較子comparator共有六種：【== / != / < / <= / > / >=】
+	其中要注意的是，等於是"=="，而"="是用來定義變數的
+
+Boolean Operators - 
+	用來進行比較並且產生布林值，其中包含【and / or / not】三種。
+		AND：前後皆為True才是True
+		OR：前後只要有一個True就是True
+		NOT：會給出一個相反的布林值
+	在布林運算式當中，比較的順序是【NOT -> AND -> OR】，除非有使用括號來包起來，有的話就是括號內的先進行運算
+
+Conditional Statement Syntax - 
+	這裡的command範例是if判斷式。
+	在Python中，在條件式子的下一行，會向右縮入4個空白半形空格的空間，稱為【white space】，有時會看到使用tab或是2個空格的顯示方式。
+	如果每一行的縮行字數不同，又沒有使用任何command的話，就會報錯。
+
+IF判斷式 - 
+	Sample Code：
+		if some_function():
+  			# block line one
+  			# block line two
+  			# et cetera
+  	注意：在if function code的最後面，一定要加上一個冒號。
+  	如果some_function()結果為True，下面縮行的部分就會被執行。結果為False，縮行的部分則會被跳過。
+
+Else表示式 - 
+	作為if判斷式的補充內容，接在if的後面，如果if的判斷為False，則執行else後面的部分。
+	與if不同的是，else不需要特別進行依賴表達式。
+
+Elif判斷式 - 
+	Elif是else if的縮寫！如果IF判斷為False的話，再進行判斷。
