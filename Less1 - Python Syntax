@@ -31,7 +31,7 @@ Numbers / Integer / Float - 數字 / 整數 / 浮點數
 		如果除法算式包含了浮點數，結果就會是浮點數
 
 Booleans - 布林
-	使用 True 或 False 來表示
+	使用 True 或 False 來表示（區分大小寫）
 	布林是作為一個整數integer的特殊情況，True對應為1，False則對應為0
 
 變數型態轉換 - 
