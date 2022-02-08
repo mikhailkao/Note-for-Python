@@ -39,7 +39,12 @@ String Concatenation - 連接字串
 String Formatting - 字串格式化 - %
 	【%】用來連結字串與變數，【%】用來將連接在後的字串變數把【%s】取代掉，後段加上% ()
 	如果要取代的是整數int，可以使用【%02d】，2用來表示要填充的字元數，不足的部分使用0來填充，d代表要填充的是整數（不分正負數）。 -> 0似乎是固定的寫法，不能找到其他可填充的字元
-	需要留意的是，【%s】需要和後面的 % ()內含的變數數量一致
+	需要留意的是，【%s】的數量需要和後面的 % ()內含的變數數量一致
 	
 
-
+Date and Time - 取得時間
+	from datetime import datetime
+	print datetime.now() -> 顯示完整時間（2022-02-08 12:02:45.602597）
+	print datetime.now().year -> 顯示年份，可使用的為year/month/day/hour/minute/second
+	上述的範例是將datetime.now()定義為變數，再使用【變數.year】去顯示
+	如果要列印出類似【2022/02/08】這樣的格式，可以配合字串格式化的技巧
