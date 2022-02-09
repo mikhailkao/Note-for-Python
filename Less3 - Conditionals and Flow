@@ -1,3 +1,5 @@
+@@ 判斷以及流程控制
+
 Comparators - 
 	用來比較的比較子comparator共有六種：【== / != / < / <= / > / >=】
 	其中要注意的是，等於是"=="，而"="是用來定義變數的
@@ -29,3 +31,28 @@ Else表示式 -
 
 Elif判斷式 - 
 	Elif是else if的縮寫！如果IF判斷為False的話，再進行判斷。
+
+
+@@ PygLatin
+
+Pyg latin是一種文字遊戲。主要要做的事情是：要求輸入 -> 檢查輸入有效 -> 進行文字轉換 -> 列印在console上面
+
+Input - 
+	name = raw_input("What's your name?")
+	使用raw_input來要求使用者輸入，並且定義為變數name，括號內的訊息會輸出在console上
+	註：
+		在Python2中，存在raw_iinput()和input()兩個函數。raw_input()會將所有輸入視為string，並返回string。input()則只能接受數字，在返回的時候依照輸入的內容判斷是int還是float
+		在Python3中，僅保留input()函數，接受任意輸入，並預設作為str處理，並返回str。
+
+Check input - 
+	在使用者輸入後，可以使用if判斷式來檢查輸入的資訊是否有效：
+		len() -> 檢查長度是否>0
+		.isalpha() -> 檢查是否只包含字母，【變數.isalpha()】回傳True就代表只有字母
+	檢查使用者輸入的字串是否符合要求是非常重要的！
+
+提取字母 - 
+	透過index[]來踢取字串中的字元。ex. 
+		the_string = 'Hello'
+		first_letter = the_string[0] -> 即提取出【H】
+		print (the_string[1:3]) -> 即印出【ell】
+	小技巧：提取扣除第一個字元 -> the_string[1:len(the_string)]，這樣會算到向後一個字元，就一定會算到全部

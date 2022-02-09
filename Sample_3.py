@@ -1,3 +1,5 @@
+# @@ Conditions and Flow Control
+
 # If statement
 def using_control_once():
     if 1 == 1:
@@ -62,3 +64,30 @@ print (grade_converter(70))
 
 # This should print an "F"
 print (grade_converter(61))
+
+
+# @@ PygLatin
+
+print ('Welcome to the Pig Latin Translator!')
+
+# Start coding here!
+#Py2 ONLY -> rawinput
+pyg = 'ay'
+
+original = raw_input('Enter a word:')
+
+if len(original) > 0 and original.isalpha():
+  print original
+  word = original.lower()
+  first = word[0]
+  new_word = word + first + pyg
+  new_word = new_word[1:len(new_word)]
+  print (new_word)
+else:
+  print 'empty'
+
+
+
+
+
+
