@@ -1,0 +1,75 @@
+@@ Functions
+Function的好處 - 
+	透過定義一個簡潔的函數，並且重複使用
+
+Function的結構包含三個元件：
+	Header：包含關鍵字【def】、function名稱以及括號內的參數parameter。結尾加上冒號。範例如下：
+		def hello_world(): # There are no parameters
+	Optional Comment：非必須！用來說明此function的功能。用三個雙引號包起來
+	Body：用來表示整個function函數的執行過程，須縮排。
+	以下是整個
+		def hello_world(): #Header
+		"""Prints 'Hello World!' to the console.""" #Comment
+  		print "Hello World!" #Body
+
+呼叫 & 執行 Function - 
+	定義好一個function後，需要呼叫他才能執行！範例如下：
+		def square(n):
+  			"""Returns the square of a number."""
+  			squared = n ** 2
+  			print "%d squared is %d." % (n, squared)
+  			return squared
+
+  		square(10)
+  	在上述的code當中，透過【square(10)】來呼叫這個function。最後會回傳squared值，在範例中為100，沒有的話則會回傳None。
+
+Parameters and Arguments - 參數
+	在【呼叫 & 執行 Function】當中，定義了一個名為square(n)的function，其中n稱為parameter。在呼叫的時候使用的是【square(10)】，此時10稱為arguments。
+
+
+Functions Calling Functions - 在一個function中呼叫另外一個function
+	def fun_one(n):
+  		return n * 5
+ 
+	def fun_two(m):
+  		return fun_one(m) + 7
+
+@@ Import
+常用的Import Modules - 
+https://discuss.codecademy.com/t/what-are-some-commonly-used-modules-we-might-want-to-import/338174
+
+Import的方法：
+	Generic Imports - 通用導入 - 最常用的作法
+		最簡單的import方法，直接將整個module導進來。使用的寫法是【module.function】範例：
+			import math -> 導入整個module
+			print (math.sqrt(25)) -> 計算25的平方根
+	Function Imports - 函數導入 - 通常只用在小程式中，不想每次呼叫都要寫module名稱
+		在程式當中如果只需要用到module裡面的某一個function而已，就不需要整個導進來，透過function import只導入特定的function即可。後續呼叫的時候只也不需要寫module name，直接呼叫function name即可。
+			from math import sqrt -> 只導入math中的sqry函數
+			print (sqrt(25))
+	Universal Imports - 通用導入 - 不建議使用，除非程式很小。
+			from math import * -> 導入math中的所有函數
+			print (sqrt(25))
+	注意：雖然Generic Imports跟Universal Imports都可以將整個module匯入，但是使用Universal Imports匯入後，必須注意在程式中所有的function命名都不能跟module中的所有function衝突，不然會造成在呼叫的時候可能會造成錯誤。
+
+列舉module內否認function name - 
+	import <module name>
+	print dir(<module name>)
+
+Built-in Functions - 
+	內建的，不需要import就可以使用的functions。ex. .upper() / .lower() / str() / len()等等。
+	Built-in Functions for Py2 - https://docs.python.org/2/library/functions.html
+	Built-in Functions for Py3 - https://docs.python.org/3.3/library/functions.html
+
+max() - 取最大值，int / float only。括號內至少要用2個或以上的整數或是浮點數，中間用逗號隔開。
+min() - 取最大值，int / float only。括號內至少要用2個或以上的整數或是浮點數，中間用逗號隔開。
+abs() - 取絕對值，int / float only。括號內只能有一個整數或是浮點數。
+type() - 回傳類型。
+
+
+
+
+
+
+
+
