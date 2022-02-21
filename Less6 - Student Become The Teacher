@@ -1,0 +1,50 @@
+這是一個測驗單元，題目放在這！在Sample.py中有對應的答案！
+
+# For the Record
+	for each student in your students list, print out that student‘s data, as follows:
+		print the student‘s name
+		print the student‘s homework
+		print the student‘s quizzes
+		print the student‘s tests
+
+# It's Okay to be Average
+	提醒：在除法中，整數除以整數的結果也會是整數。如果想要得到較精確的結果，需要使用float。Ex.【5/2 -> 2】【5.0/2 -> 2.5】【float(5)/2 -> 2.5】
+	
+	題目：
+	Write a function average that takes a list of numbers and returns the average.
+		Define a function called average that has one argument, numbers.
+		Inside that function, call the built-in sum() function with the numbers list as a parameter. Store the result in a variable called total.
+		Like the example above, use float() to convert total and store the result in total.
+		Divide total by the length of the numbers list. Use the built-in len() function to calculate that.
+		Return that result.
+
+"\"是連續字元的意思！代表下一行是前一行的延續！放在前一行的結尾處。
+
+# Just Weight and See
+	Write a function called get_average that takes a student dictionary (like lloyd, alice, or tyler) as input and returns his/her weighted average.
+		Define a function called get_average that takes one argument called student.
+		Make a variable homework that stores the average() of student["homework"].
+		Repeat the above step for “quizzes” and “tests”.
+		Multiply the 3 averages by their weights and return the sum of those three. Homework is 10%, quizzes are 30% and tests are 60%.
+
+# Sending a Letter
+	Define a new function called get_letter_grade that has one argument called score. Expect score to be a number.
+	Inside your function, test score using a chain of if: / elif: / else: statements, like so:
+		If score is 90 or above: return "A"
+		Else if score is 80 or above: return "B"
+		Else if score is 70 or above: return "C"
+		Else if score is 60 or above: return "D"
+		Otherwise: return "F"
+		Finally, test your function!
+	Print the resulting letter grade with print. Call the get_letter_grade function and pass in get_average(lloyd).
+
+# Part of the Whole
+	Define a function called get_class_average that has one argument class_list. You can expect class_list to be a list containing your three students.
+	First, make an empty list called results.
+	For each student item in the class_list, calculate get_average(student) and then call results.append() with that result.
+	Finally, return the result of calling average() with results.
+
+# How is Everybody Doing?
+	Create a list called students and fill it with the three students, alice, lloyd, and tyler.
+	Find the average grade of the class. Print this numerical grade to the terminal.
+	Finally, determine the letter grade for the class’s average and print it to the terminal.
