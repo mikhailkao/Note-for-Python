@@ -1,0 +1,186 @@
+稍微複習一下Less 5的內容，再加點新東西！
+
+刪除List中的元素 - 
+	移除List中的特定要素 - list_name.remove(要移除的元素)
+	移除List中特定位置的元素 - 
+		del(list_name[要移除的元素位置])
+		list_name.pop(要移除元素的位置)
+	上述作法中，.pop會回應刪除的元素，其他兩者不會回應任何訊息
+
+
+透過function來回傳List - 
+	方法與回傳argument的方法完全一致
+
+Printing out a list item by item in a function - 
+	練習使用list中的每一個元素
+	題目 - 
+		Define a function called print_list that has one argument called x.
+		Inside that function, print out each element one by one. Use the existing code as a scaffold.
+		Then call your function with the argument n.
+
+Modifying each element in a list in a function - 
+	練習如何修改list中的元素，很常見的做法。
+	題目 - 
+		Create a function called double_list that takes a single argument x (which will be a list) and multiplies each element by 2 and returns that list. Use the existing code as a scaffold.
+
+Range - 
+	用來快速生成一個list的函數。用法如下：
+		range(stop) -> range(6) -> [0, 1, 2, 3, 4, 5]
+		range(start, stop) -> range(1, 6) -> [1, 2, 3, 4, 5]
+		range(start, stop, step) -> range(1, 6, 3) # => [1, 4]
+	用來生成開始到結束的一個數字list，包左不包右！預設值是start == 0， step == 1。
+	注意！range函數在py2會回應list型態，在py3則會回應range函數型態：
+		py2 -> range(3) = [0,1,2]
+		p3y -> range(3) = range(0,3). 要使用list的話就要進行型別轉換。list.range(3) = [0,1,2]
+
+
+Iterating over a list in a function - 
+	題目 - 
+		Create a function that returns the sum of a list of numbers.
+		On line 3, define a function called total that accepts one argument called numbers. It will be a list.
+		Inside the function, create a variable called result and set it to zero.
+		Using one of the two methods above, iterate through the numbers list. For each number, add it to result.
+		Finally, return result.
+
+Using strings in lists in functions - 
+	題目 - 
+		Create a function that concatenates strings.
+		Define a function called join_strings accepts an argument called words. It will be a list.
+		Inside the function, create a variable called result and set it to "", an empty string.
+		Iterate through the words list and concatenate each word to result.
+		Finally, return the result.
+		Don’t add spaces between the joined strings!
+
+Using two lists as two arguments in a function - 
+	題目 - 
+		Create a function that joins two lists together.
+		On line 5, define a function called join_lists that has two arguments, x and y. They will both be lists.
+		Inside that function, return the result of concatenating x and y together.
+
+迴圈中的迴圈 - Using a list of lists in a function - 	
+	Sample Code - 
+		list_of_lists = [[1, 2, 3], [4, 5, 6]]
+		 
+		for lst in list_of_lists:
+		  for item in lst:
+		    print item
+	上述代碼會將1～6依序輸出，主要是用來整合多個list內的元素成為一個list
+	題目 - 
+		Create a function called flatten that takes a single list and concatenates all the sublists that are part of it into a single list.
+		On line 3, define a function called flatten with one argument called lists.
+		Make a new, empty list called results.
+		Iterate through lists. Call the looping variable numbers.
+		Iterate through numbers.
+		For each number, .append() it to results.
+		Finally, return results from your function.
+
+BattleShip - 
+	以下內容會嘗試建立一個簡單的單人經典棋盤遊戲【BattleShip】，主要內容是會有一艘船藏在一個 5*5 的棋盤當中。玩家有十次機會可以猜中船在那裡！
+	會使用到 List / Condition / Function 的知識！
+
+	Getting Our Feet Wet - 
+		Create a variable board and set it equal to an empty list.
+
+	Make a List - 
+		建構棋盤！
+		要建構一個['0','0','0','0','0']有兩種方法：
+			1. print ['0','0','0','0','0']
+			2. print ['0'] * 5
+		然後將上述的內容重複五次！可以考慮使用loop！
+		題目 - 此題的意思是要建立一個內含5個['O','O','O','O','O']的list，不是列印出一個 5*5 的棋盤
+			Create a 5 x 5 grid initialized to all ‘O’s and store it in board.
+			Use range() to loop 5 times.
+			Inside the loop, .append() a list containing 5 "O"s to board, just like in the example above.
+			Note that these are capital letter “O” and not zeros.
+
+	Custom Print - 
+		在這裏，再使用for迴圈，將上面建立的list逐行印出！
+		題目 - 
+			First, delete your existing print statement.
+			Then, define a function named print_board with a single argument, board_in.
+			Inside the function, write a for loop to iterates through each row in board and print it to the screen.
+			Call your function with board to make sure it works.
+
+	Printing Pretty - 
+		使用join函數來美化list的輸出內容！一般list在輸出的時候，每個元素之間是逗點，以及包裹string的引號，在使用join的時候都會被取代掉！
+		用法：print "<取代逗號的字串>".join(list_name) -> Py2限定
+		Py3的寫法：先定義一個型別是str的變數(a)，然後【print (a.join(list_name))】
+
+	Hide - 
+		呼叫random module，使用radint函數！用法：radint(下限, 上限). ex.【radint(0, 6)】
+
+	...and Seek! - 
+		在 Hide 中定義了一個隱藏船艦的位置，接下來要請玩家猜猜位置。透過 raw_input() 來處理！用法：<變數> = raw_inpuot("使用者互動訊息")
+		raw_input是py2限定的用法，會將使用者輸入的字元轉成str，後續要轉成int。
+		py3使用的是input()，接受所有類型輸入！input()在py2當中只接受數字（含number和float）並保留原本的型別。
+		題目 - 
+			Create a new variable called guess_row and set it to int(raw_input("Guess Row: ")).
+			Create a new variable called guess_col and set it to int(raw_input("Guess Col: ")).
+			Click Run and then answer the prompts by typing in a number and pressing Enter (or Return on some computers).
+
+	It's Not Cheating—It's Debugging! - 
+		取得船艦隱藏的地點，以及使用者輸入的位置後，為了方便debug，在這邊會把先前亂數產生的結果印出來！但是後續會再刪除，不然就等於是把答案藏在code當中。
+		題目 - 
+			Before the lines prompting the user for input:
+			Print the value of ship_row.
+			Print the value of ship_col.
+
+	You win! -
+		比對亂數產生的結果和使用者輸入，不過相同即為使用者獲勝！
+		題目 - 
+			On line 29, add an if to check if guess_row equals ship_row and guess_col equals ship_col.
+			If that is the case, please print out "Congratulations! You sank my battleship!"
+			When you run this code, be sure to enter integer guesses in the panel where it asks for “Guess Row” and then “Guess Col”.
+
+	Danger, Will Robinson!! - 
+		因為玩家不一定會一次就猜中，所以對於猜錯的幾次，也需要先保有這些結果！所以除了輸出錯誤訊息外，還將猜測的位置標示成“X”
+		題目 - 
+			Add an else under the if we wrote in the previous step.
+			Print out "You missed my battleship!"
+			Set the list element at guess_row, guess_col to "X".
+			As the last line in your else statement, call print_board(board) again so you can see the "X".Make sure to enter a col and row that is on the board!
+	
+	Bad Aim - 
+		多一些關於【沒有猜中】的想法，如果輸入的範圍超過遊戲的範圍？以這個遊戲來說，是個 5*5 的地圖，如果猜了範圍以外的答案
+			if x not in range(8) or y not in range(3):
+  				print "Outside the range"
+  		題目 - 
+  			Add a new if statement that is nested under the else.
+			Like the example above, it should check if guess_row is not in range(5) or guess_col is not in range(5).
+			If that is the case, print out "Oops, that's not even in the ocean."
+			After your new if statement, add an else that contains your existing handler for an incorrect guess. Don’t forget to indent the code!
+
+	Not Again - 
+		如果猜到已經猜過的答案，也可以跳出提醒訊息！
+		題目 - 
+			Add an elif to see if the guessed location already has an ‘X’ in it.
+			If it has, print "You guessed that one already."
+
+	Play It, Sam - 
+		允許玩家總共有五次機會
+		題目 - 
+			Add a for loop that repeats the guessing and checking part of your game for 4 turns, like the example above.
+			At the beginning of each iteration, print "Turn", turn + 1 to let the player know what turn they are on.
+			Indent everything that should be repeated.
+
+	Game Over - 
+		題目 - 
+			Add an if statement that checks to see if the user is out of guesses.
+			Put it under the else that accounts for misses.
+			Put it after the if/elif/else statements that check for the reason the player missed. We want "Game Over" to print regardless of the reason.
+			If turn equals 3, print "Game Over".
+
+	A Real Win - 
+		如果猜對了，就直接結束遊戲，而不是要把遊玩次數跑完！透過 break 來結束 for 迴圈
+		題目 - 
+			Add a break under the win condition to end the loop after a win.
+
+	Extra Credit - 
+		主要是一些延伸的想法，讓遊戲性更佳！
+		原文：
+			You can also add on to your Battleship! program to make it more complex and fun to play. Here are some ideas for enhancements—maybe you can think of some more!
+			Make multiple battleships: you’ll need to be careful because you need to make sure that you don’t place battleships on top of each other on the game board. You’ll also want to make sure that you balance the size of the board with the number of ships so the game is still challenging and fun to play.
+			Make battleships of different sizes: this is trickier than it sounds. All the parts of the battleship need to be vertically or horizontally touching and you’ll need to make sure you don’t accidentally place part of a ship off the side of the board.
+			Make your game a two-player game.
+			Use functions to allow your game to have more features like rematches, statistics and more!
+			Some of these options will be easier after we cover loops in the next lesson. Think about coming back to Battleship! after a few more lessons and see what other changes you can make!
