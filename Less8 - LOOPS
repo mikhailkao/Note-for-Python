@@ -1,0 +1,97 @@
+while迴圈 - 
+	類似IF判斷式，只要條件為true，則會繼續進行，直到條件為false。
+	在下列代碼中，會一直持續執行，直到count等於5為止！
+	在while裡面也可以進行運算
+	注意！如果移除【count += 1】，則會因為達不到設定的條件而造成無窮迴圈
+	Sample - 
+	count = 0
+
+	if count < 5:
+	  	print "Hello, I am an if statement and count is", count
+
+	while count < 5:
+  		print "Hello, I am a while and count is", count
+  		count += 1
+
+condition - 
+	Condition條件是用來決定迴圈要不要繼續進行的關鍵！
+	在以下代碼中，總共有五個步驟：
+		1. 變數 loop_condition 定義為 true
+		2. while迴圈檢查 loop_condition 為 true，進入迴圈
+		3. 輸出內容
+		4. 變數 loop_condition 定義為 false
+		5. while迴圈檢查 loop_condition 不為 true，不執行迴圈內容
+	Sample - 
+	loop_condition = True
+
+	while loop_condition:
+  	print "I am a loop"
+  	loop_condition = False
+
+常用的檢查錯誤方法 - 
+	While迴圈很常用來檢查使用者輸入的內容是不是符合需求。例如需要輸入 Y 或 N 的情況下，可以透過while迴圈來進行檢查。
+	Sample - 
+	choice = input('Enjoying the course? (y/n)')
+	while choice != "y" and choice != "n":  # Fill in the condition (before the colon)
+  		choice = input("Sorry, I didn't catch that. Enter again: ")
+無限迴圈 - 
+	常見的無限迴圈原因：
+		1. 迴圈條件無法為false，如：while 1 != 2
+		2. 迴圈的邏輯防止迴圈的條件成為false。範例如下：
+			count = 10
+			while count > 0:
+ 				count += 1
+
+Break - 
+	Break是一個單行程式碼。用來停止目前執行中的迴圈。不過在break前面的這一段還是會【執行一次】
+
+While / else - 
+	與 if/else 不同的是，while/else 中，else的部分是在當while迴圈的條件被判斷成false的時候執行（像是沒有輸入或是正常退出的時候）。如果是因為break而中斷的則不會執行else的部分。
+Ps. For也可以使用【else】的！
+
+For迴圈 - 
+	與while迴圈不同的是，for迴圈是在一個特定的範圍內循環。比如說做某件特定的事情3次。
+	如果資料結構是有一個明確的範圍，就使用for。如果是需要判斷true或是false，則使用while
+	沒有硬性規定什麼情況一定要怎麼寫，只要讓code清楚明瞭好理解即可
+	透過for迴圈，可以將一個string中的所有單獨字元進行輸出
+	Sample - 
+	word = "Marble"
+	for char in word:
+  		print char,
+  	在上述的代碼中，最後輸出的部分如果只有變數，則會一個字一行的印出。
+  	如果在變數名稱後面加上一個逗號，則代表將字串中的每個字母列印在同一行，並且在中間加上一個空格【M a r b l e】。這是在py2的作法，py2未知。
+
+用For迴圈來輪詢list跟dictionary - 
+	使用for迴圈來輪詢list是很常見的作法。
+	使用for來輪詢dictionary的話，被輪詢的會是key。要輸出value的話還是要輸出dictionary[key]才可以。
+
+Enumerate 函數function - 
+	在輪詢一個list的時候，會沒有辦法知道目前輪詢到那一個位置！此時可以透過[enumerate]函數來同步顯示輪詢的index為何。
+	Sample - 
+		for a, b in list_name -> a為index，b為輪詢的值。
+
+zip function - 
+	在同時處理多個list的時候，可以透過zip函數來進行！透過zip函數可以一次處理多個list，但是會在最短的list結尾停止！
+	如果兩個list，一個有3個值，一個有5個值。透過zip來輪詢這兩個list，就只會輪詢3個值而已
+		for a, b in zip(list1, list2)
+
+math.factorial function - 
+	階層，就是！的意思。ex. 3! = 3 * 2 * 1
+	factorial(3) = 3 * 2 * 1 = 6
+
+string.split(separator, maxsplit) - 
+	將字串拆開變成list。其中：
+		separator - 分隔符號。在指定的分隔符號處進行分割，如果沒有指定的話則為【空格】
+		maxsplit - 用來限制將字串切成幾個list內的值，沒定義就代表不限
+
+string.join(sequence) - 
+	用來把list內的值連結在一起
+	string - 串接list內值的串連字元
+	sequence - list名稱
+
+檢視list內有沒有重複 - 
+	假設有list a 和 b，要確認b內的值有沒有在a內出現。可以透過【if b (not) in a】來判斷
+
+排序list - 
+	透過listname.sort()，來永久排序list
+	也可以透過【sorted(list)】來排序，不過就不是永久排序原本定義的
